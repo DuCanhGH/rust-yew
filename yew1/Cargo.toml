@@ -1,0 +1,15 @@
+[package]
+name = "yew1"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+yew = "0.19"
+yew-router = "0.16"
+stylist = { version = "0.10", features = ["yew_integration"]}
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+opt-level = "s"
+lto = true

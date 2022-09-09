@@ -1,0 +1,25 @@
+{
+  "name": "yew1",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev:css": "postcss css/input.css -o dist-css/output.css --watch",
+    "dev:server": "trunk serve --open",
+    "dev": "run-p dev:*",
+    "build:css": "postcss css/input.css -o dist-css/output.css",
+    "build:server": "trunk build --release",
+    "build": "cross-env NODE_ENV=production run-s build:css build:server"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "10.4.8",
+    "cssnano": "5.1.13",
+    "npm-run-all": "4.1.5",
+    "postcss": "8.4.16",
+    "postcss-cli": "10.0.0",
+    "tailwindcss": "3.1.8"
+  },
+  "dependencies": {
+    "cross-env": "7.0.3"
+  }
+}
