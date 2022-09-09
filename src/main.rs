@@ -1,6 +1,6 @@
+use stylist::{yew::styled_component, style};
 use yew::prelude::{function_component, html};
 use yew_router::prelude::*;
-use stylist::yew::styled_component;
 
 #[derive(Clone, Routable, PartialEq)]
 enum Routes {
@@ -29,9 +29,15 @@ fn switch(routes: &Routes) -> yew::Html {
 
 #[styled_component[Test]]
 fn test_com() -> Html {
+    let style = style!(
+        r#"
+            color: black;
+        "#
+    )
+    .expect("Failed to mount style");
     html! {
         <>
-        <   p class={yew::classes!("bg-red-100")}>{"Test!"}</p>
+            <p class={yew::classes!(std::format!("bg-red-100 {}", style.get_class_name()))}>{"Test!"}</p>
         </>
     }
 }
