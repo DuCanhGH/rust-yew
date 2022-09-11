@@ -37,7 +37,7 @@ fn test_com() -> Html {
     .expect("Failed to mount style");
     html! {
         <>
-            <p class={yew::classes!(std::format!("bg-red-100 {}", style.get_class_name()))}>{"Test!"}</p>
+            <p class={yew::classes!("bg-red-100", style.get_class_name().to_owned())}>{"Test!"}</p>
         </>
     }
 }
